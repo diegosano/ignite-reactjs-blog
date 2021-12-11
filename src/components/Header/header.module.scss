@@ -1,1 +1,17 @@
-// TODO
+.headerContainer {
+  height: 5rem;
+}
+
+.headerContent {
+  max-width: 720px;
+  height: 5rem;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  img {
+    margin: 2.5rem 0;
+    cursor: pointer;
+  }
+}

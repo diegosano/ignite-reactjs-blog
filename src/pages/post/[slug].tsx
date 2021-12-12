@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 
+import Prismic from '@prismicio/client';
 import { getPrismicClient } from '../../services/prismic';
 
 import commonStyles from '../../styles/common.module.scss';
@@ -30,14 +31,14 @@ interface PostProps {
 //   // TODO
 // }
 
-// export const getStaticPaths = async () => {
+// export const getStaticPaths: GetStaticPaths = async () => {
 //   const prismic = getPrismicClient();
-//   const posts = await prismic.query(TODO);
-
-//   // TODO
+//   const posts = await prismic.query(
+//     Prismic.Predicates.at('document.type', 'posts')
+//   );
 // };
 
-// export const getStaticProps = async context => {
+// export const getStaticProps: GetStaticProps = async context => {
 //   const prismic = getPrismicClient();
 //   const response = await prismic.getByUID(TODO);
 

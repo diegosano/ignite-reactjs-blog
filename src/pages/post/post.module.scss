@@ -1,13 +1,33 @@
 .banner {
+  display: block;
+  max-height: 400px;
+  margin: 0 auto;
 }
 
-.title {
-}
+.post {
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 3.65rem;
+    color: var(--heading);
+    margin-top: 5rem;
+  }
 
-.info {
-}
+  .info {
+    display: flex;
+    align-content: flex-start;
 
-.content {
-  max-width: 720px;
-  margin: 4rem auto 0;
+    margin-top: 1.5rem;
+    font-size: 1.125rem;
+    color: var(--info);
+
+    span + span {
+      margin-left: 1.5rem;
+    }
+  }
+
+  .content {
+    max-width: 720px;
+    margin: 4rem auto 0;
+  }
 }

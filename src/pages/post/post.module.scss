@@ -1,7 +1,7 @@
 .banner {
-  display: block;
-  max-height: 400px;
-  margin: 0 auto;
+  max-height: 25rem;
+  width: 100%;
+  object-fit: cover;
 }
 
 .post {
@@ -29,5 +29,16 @@
   .content {
     max-width: 720px;
     margin: 4rem auto 0;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.575rem;
+      color: var(--heading);
+    }
+
+    h2, p{
+      margin-bottom: 3rem;
+    }
   }
 }

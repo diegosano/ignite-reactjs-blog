@@ -21,8 +21,12 @@
     font-size: 1.125rem;
     color: var(--info);
 
-    span + span {
+    div + div {
       margin-left: 1.5rem;
+    }
+
+    & > * {
+      display: flex;
     }
   }
 
@@ -37,8 +41,13 @@
       color: var(--heading);
     }
 
-    h2, p{
-      margin-bottom: 3rem;
+    .paragraphs {
+      margin: 3rem 0;
+
+      p {
+        line-height: 1.575rem;
+        margin: 1rem 0;
+      }
     }
   }
 }

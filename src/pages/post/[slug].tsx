@@ -55,17 +55,20 @@ export default function Post({ post }: PostProps): JSX.Element {
           <h1>{post.data.title}</h1>
 
           <div className={styles.info}>
-            <span>
-              <FiCalendar /> {post.first_publication_date}
-            </span>
+            <div>
+              <FiCalendar />
+              <span>{post.first_publication_date}</span>
+            </div>
 
-            <span>
-              <FiUser /> {post.data.author}
-            </span>
+            <div>
+              <FiUser />
+              <span>{post.data.author}</span>
+            </div>
 
-            <span>
-              <FiClock /> {`${readingTime} min`}
-            </span>
+            <div>
+              <FiClock />
+              <span>{`${readingTime} min`}</span>
+            </div>
           </div>
 
           <div className={styles.content}>
@@ -74,7 +77,7 @@ export default function Post({ post }: PostProps): JSX.Element {
                 <>
                   <h2>{heading}</h2>
                   <div
-                    className={styles.postContent}
+                    className={styles.paragraphs}
                     // eslint-disable-next-line react/no-danger
                     dangerouslySetInnerHTML={{ __html: RichText.asHtml(body) }}
                   />

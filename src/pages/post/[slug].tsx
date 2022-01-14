@@ -54,18 +54,18 @@ export default function Post({ post }: PostProps): JSX.Element {
         <article className={styles.post}>
           <h1>{post.data.title}</h1>
 
-          <div className={styles.info}>
-            <div>
+          <div className={styles.infoContainer}>
+            <div className={styles.info}>
               <FiCalendar />
               <span>{post.first_publication_date}</span>
             </div>
 
-            <div>
+            <div className={styles.info}>
               <FiUser />
               <span>{post.data.author}</span>
             </div>
 
-            <div>
+            <div className={styles.info}>
               <FiClock />
               <span>{`${readingTime} min`}</span>
             </div>

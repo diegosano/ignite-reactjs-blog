@@ -13,7 +13,7 @@
     margin-top: 5rem;
   }
 
-  .info {
+  .infoContainer {
     display: flex;
     align-content: flex-start;
 
@@ -27,6 +27,15 @@
 
     & > * {
       display: flex;
+    }
+
+    .info {
+      display: flex;
+      align-items: center;
+
+      span {
+        margin-left: 0.5rem;
+      }
     }
   }
 

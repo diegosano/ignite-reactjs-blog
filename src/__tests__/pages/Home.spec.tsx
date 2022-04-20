@@ -29,7 +29,7 @@ interface GetStaticPropsResult {
   props: HomeProps;
 }
 
-const mockedQueryReturn = {
+const mockedGetByTypeReturn = {
   next_page: 'link',
   results: [
     {
@@ -79,8 +79,8 @@ describe('Home', () => {
     };
 
     mockedPrismic.mockReturnValue({
-      query: () => {
-        return Promise.resolve(mockedQueryReturn);
+      getByType: () => {
+        return Promise.resolve(mockedGetByTypeReturn);
       },
     });
 
@@ -107,7 +107,7 @@ describe('Home', () => {
   });
 
   it('should be able to return prismic posts documents using getStaticProps', async () => {
-    const postsPaginationReturn = mockedQueryReturn;
+    const postsPaginationReturn = mockedGetByTypeReturn;
 
     const getStaticPropsContext: GetStaticPropsContext<ParsedUrlQuery> = {};
 
@@ -127,7 +127,7 @@ describe('Home', () => {
   });
 
   it('should be able to render posts documents info', () => {
-    const postsPagination = mockedQueryReturn;
+    const postsPagination = mockedGetByTypeReturn;
 
     render(<App postsPagination={postsPagination} />);
 
@@ -145,7 +145,7 @@ describe('Home', () => {
   });
 
   it('should be able to navigate to post page after a click', () => {
-    const postsPagination = mockedQueryReturn;
+    const postsPagination = mockedGetByTypeReturn;
 
     render(<App postsPagination={postsPagination} />, {
       wrapper: RouterWrapper,
@@ -172,7 +172,7 @@ describe('Home', () => {
   });
 
   it('should be able to load more posts if available', async () => {
-    const postsPagination = { ...mockedQueryReturn };
+    const postsPagination = { ...mockedGetByTypeReturn };
     postsPagination.results = [
       {
         uid: 'como-utilizar-hooks',
@@ -203,7 +203,7 @@ describe('Home', () => {
   });
 
   it('should not be able to load more posts if not available', async () => {
-    const postsPagination = mockedQueryReturn;
+    const postsPagination = mockedGetByTypeReturn;
     postsPagination.next_page = null;
 
     render(<App postsPagination={postsPagination} />);

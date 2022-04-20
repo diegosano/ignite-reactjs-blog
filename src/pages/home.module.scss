@@ -26,7 +26,7 @@
       margin-top: 0.5rem;
     }
 
-    .info {
+    .infoContainer {
       display: flex;
       align-content: flex-start;
 
@@ -34,8 +34,21 @@
       font-size: 1.125rem;
       color: var(--info);
 
-      span + span {
+      div + div {
         margin-left: 1.5rem;
+      }
+
+      .info {
+        display: flex;
+        align-items: center;
+
+        span {
+          margin-left: 0.5rem;
+        }
+
+        span + span {
+          margin-left: 1.5rem;
+        }
       }
     }
 
@@ -49,10 +62,14 @@
 
 .showMore {
   color: var(--highlight);
+  cursor: pointer;
   display: inline-block;
   font-size: 1.125rem;
   font-weight: 600;
   margin: 4rem 0 2rem;
+  background: transparent;
+  border: none;
+  outline: none;
 
   transition: filter 0.2s;
 
